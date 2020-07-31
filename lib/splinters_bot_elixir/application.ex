@@ -7,6 +7,7 @@ defmodule SplintersBotElixir.Application do
 
   import Supervisor.Spec
 
+  @impl true
   def start(_type, _args) do
     children = [
       worker(SplintersBotElixir.Robot, [])

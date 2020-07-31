@@ -8,9 +8,9 @@ defmodule SplintersBotElixir.Responders.Discord do
     use Hedwig.Responder
 
     @usage """
-    !discord
+    discord - Replies with link to discord
     """
-    hear ~r/!discord/ix, msg do
+    hear ~r/\!discord$/, msg do
         reply msg, SplintersBotElixir.Env.fetch(:discord)
     end
 end

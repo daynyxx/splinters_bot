@@ -8,7 +8,7 @@ defmodule SplintersBotElixir.Responders.Insta do
     use Hedwig.Responder
 
     @usage """
-    insta - Replies with link to the youtube channel
+    !INSTA
     """
     hear ~r/\!insta$/, msg do
         reply msg, SplintersBotElixir.Env.fetch(:insta)

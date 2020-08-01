@@ -28,14 +28,14 @@ defmodule SplintersBotElixir.Responders.Help do
   use Hedwig.Responder
 
   @usage """
-  hedwig help - Displays all of the help commands that hedwig knows about.
+  !HELP - Displays all of the help commands that hedwig knows about.
   """
   respond ~r/help$/, msg, state do
     send msg, display_usage(state)
   end
 
   @usage """
-  hedwig help <query> - Displays all help commands that match <query>.
+  !HELP <query> - Displays all help commands that match <query>.
   """
   respond ~r/help (?<query>.*)/, msg, state do
     send msg, search(state, msg.matches["query"])
@@ -45,7 +45,7 @@ defmodule SplintersBotElixir.Responders.Help do
     state
     |> all_usage()
     |> Enum.reverse()
-    |> Enum.map_join("\n", &(&1))
+    |> Enum.map_join("    ", &(&1))
   end
 
   defp search(state, query) do
@@ -53,7 +53,7 @@ defmodule SplintersBotElixir.Responders.Help do
     |> all_usage()
     |> Enum.reverse()
     |> Enum.filter(&(String.match?(&1, ~r/(#{query})/i)))
-    |> Enum.map_join("\n", &(&1))
+    |> Enum.map_join("     ", &(&1))
   end
 
   defp all_usage(%{name: name, robot: robot}) do

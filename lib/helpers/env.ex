@@ -25,7 +25,7 @@ defmodule SplintersBotElixir.Env do
       :youtube -> System.get_env("YOUTUBE")
       :insta -> System.get_env("INSTA")
       :twitter -> System.get_env("TWITTER")
-      _ -> ""
+      _ -> "Something went wrong"
     end
   end
 end

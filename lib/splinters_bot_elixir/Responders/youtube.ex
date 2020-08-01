@@ -8,7 +8,7 @@ defmodule SplintersBotElixir.Responders.Youtube do
     use Hedwig.Responder
 
     @usage """
-    youtube - Replies with link to the youtube channel
+    !YOUTUBE
     """
     hear ~r/\!youtube$/, msg do
         reply msg, SplintersBotElixir.Env.fetch(:youtube)

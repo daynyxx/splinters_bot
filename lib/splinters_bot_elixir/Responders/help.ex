@@ -31,14 +31,14 @@ defmodule SplintersBotElixir.Responders.Help do
   !HELP - Displays all of the help commands that hedwig knows about.
   """
   respond ~r/help$/, msg, state do
-    send msg, display_usage(state)
+    reply msg, display_usage(state)
   end
 
   @usage """
   !HELP <query> - Displays all help commands that match <query>.
   """
   respond ~r/help (?<query>.*)/, msg, state do
-    send msg, search(state, msg.matches["query"])
+    reply msg, search(state, msg.matches["query"])
   end
 
   defp display_usage(state) do

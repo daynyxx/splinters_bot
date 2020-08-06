@@ -18,11 +18,11 @@ defmodule SplintersBotElixir.Responders.Ban do
   hedwig help <query> - Displays all help commands that match <query>.
   """
   respond ~r/\!ban (?<user>) (?<time>)/, msg, state do
-    send msg, "/timeout #{user} #{time}"
+    send msg, "/timeout user time"
   end
 
   respond ~r/\!ban (?<user>) (?<reason>)/, msg, state do
-    send msg, "/ban #{user}"
+    send msg, "/ban user"
     # Add user and reason to banned json/mongodb file
   end
 end

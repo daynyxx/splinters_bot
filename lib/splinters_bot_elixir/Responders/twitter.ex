@@ -1,16 +1,16 @@
 defmodule SplintersBotElixir.Responders.Twitter do
-    @moduledoc """
-    Twitter
+  @moduledoc """
+  Twitter
 
-    Replies with the twitter link 
-    """
+  Replies with the twitter link 
+  """
 
-    use Hedwig.Responder
+  use Hedwig.Responder
 
-    @usage """
-    !TWITTER
-    """
-    hear ~r/\!twitter$/, msg do
-        reply msg, SplintersBotElixir.Env.fetch(:twitter)
-    end
+  @usage """
+  !TWITTER
+  """
+  hear ~r/\!twitter$/, msg do
+    reply msg, SplintersBotElixir.Env.fetch(:twitter)
+  end
 end

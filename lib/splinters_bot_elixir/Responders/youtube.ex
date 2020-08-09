@@ -1,16 +1,16 @@
 defmodule SplintersBotElixir.Responders.Youtube do
-    @moduledoc """
-    Youtube
+  @moduledoc """
+  Youtube
 
-    Replies with the youtube link 
-    """
+  Replies with the youtube link 
+  """
 
-    use Hedwig.Responder
+  use Hedwig.Responder
 
-    @usage """
-    !YOUTUBE
-    """
-    hear ~r/\!youtube$/, msg do
-        reply msg, SplintersBotElixir.Env.fetch(:youtube)
-    end
+  @usage """
+  !YOUTUBE
+  """
+  hear ~r/\!youtube$/, msg do
+    reply msg, SplintersBotElixir.Env.fetch(:youtube)
+  end
 end

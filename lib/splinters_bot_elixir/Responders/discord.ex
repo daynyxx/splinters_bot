@@ -1,16 +1,16 @@
 defmodule SplintersBotElixir.Responders.Discord do
-    @moduledoc """
-    Discord
+  @moduledoc """
+  Discord
 
-    Replies with the discord link 
-    """
+  Replies with the discord link 
+  """
 
-    use Hedwig.Responder
+  use Hedwig.Responder
 
-    @usage """
-    !DISCORD
-    """
-    hear ~r/\!discord$/, msg do
-        reply msg, SplintersBotElixir.Env.fetch(:discord)
-    end
+  @usage """
+  !DISCORD
+  """
+  hear ~r/\!discord$/, msg do
+      reply msg, SplintersBotElixir.Env.fetch(:discord)
+  end
 end

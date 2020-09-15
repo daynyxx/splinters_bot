@@ -1,18 +1,11 @@
 # SplintersBotElixir
 
-**TODO: Add description**
-
+Twitch bot that uses twitch's IRC interface. Currently in developement and very buggy.
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `splinters_bot_elixir` to your list of dependencies in `mix.exs`:
-
+Simply run with
 ```elixir
-def deps do
-  [
-    {:splinters_bot_elixir, "~> 0.1.0"}
-  ]
-end
+mix run --no-halt
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
